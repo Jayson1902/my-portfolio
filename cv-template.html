@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Clark Jayson Policarpio Mendoza</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #334155;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    .header {
+      background-color: #ffffff;
+      padding: 38px 40px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .header .subtitle {
+      font-size: 17px;
+      font-weight: 600;
+      color: #3b82f6;
+      letter-spacing: 0.5px;
+    }
+
+    /* MAIN CONTAINER (2 COLUMNS) */
+    .container {
+      display: flex;
+      flex: 1;
+      height: calc(297mm - 120px);
+    }
+
+    /* LEFT SIDEBAR */
+    .sidebar {
+      width: 35%;
+      background-color: #f8fafc;
+      padding: 28px 24px 28px 36px;
+      border-right: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* RIGHT CONTENT */
+    .main-content {
+      width: 65%;
+      background-color: #ffffff;
+      padding: 28px 36px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    /* SECTION TITLES */
+    .section-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 11px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* CONTACTS */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11.5px;
+      color: #475569;
+      word-break: break-word;
+    }
+
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: #0f172a;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: #475569;
+      text-decoration: none;
+    }
+
+    /* SKILLS */
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6.5px;
+    }
+
+    .skills-list li {
+      font-size: 11.5px;
+      color: #334155;
+      position: relative;
+      padding-left: 14px;
+      line-height: 1.35;
+    }
+
+    .skills-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+
+    /* EDUCATION */
+    .edu-item {
+      margin-bottom: 12px;
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-school {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .edu-year {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+
+    .edu-course {
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.35;
+    }
+
+    /* LANGUAGES */
+    .lang-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .lang-list li {
+      font-size: 11.5px;
+      color: #334155;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .lang-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+
+    /* MAIN RIGHT COLUMN STYLES */
+    .profile-text {
+      font-size: 11.8px;
+      line-height: 1.55;
+      color: #334155;
+      text-align: justify;
+    }
+
+    /* PROJECTS */
+    .project-card {
+      margin-bottom: 13px;
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .project-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .project-tech {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #2563eb;
+    }
+
+    .project-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      margin-top: 3px;
+    }
+
+    .project-bullets li {
+      font-size: 11.2px;
+      line-height: 1.45;
+      color: #334155;
+      position: relative;
+      padding-left: 13px;
+    }
+
+    .project-bullets li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #64748b;
+    }
+
+    .project-links {
+      font-size: 10.5px;
+      margin-top: 4px;
+      color: #64748b;
+    }
+
+    .project-links a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* EXPERIENCES */
+    .exp-item {
+      margin-bottom: 13px;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-role {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .exp-company-dates {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+    }
+
+    .exp-bullets li {
+      font-size: 11.2px;
+      line-height: 1.45;
+      color: #334155;
+      position: relative;
+      padding-left: 13px;
+    }
+
+    .exp-bullets li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Clark Jayson Policarpio Mendoza</h1>
+    <div class="subtitle">Junior Front-End Developer</div>
+  </div>
+
+  <div class="container">
+    <!-- COLONNA SINISTRA -->
+    <div class="sidebar">
+      
+      <!-- CONTATTI -->
+      <div>
+        <div class="section-title">Contatti:</div>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+39 3202699664</span>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>clarkjaysonmendoza@gmail.com</span>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Ancona, Italy</span>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span><a href="https://clark-mendoza-portfolio.web.app" target="_blank">clark-mendoza-portfolio.web.app</a></span>
+          </li>
+          
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>linkedin.com/in/clark-mendoza/</span>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span>github.com/Jayson1902</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- COMPETENZE -->
+      <div>
+        <div class="section-title">Competenze:</div>
+        <ul class="skills-list">
+          <li><strong>Angular</strong> (Componenti, Signals, Routing)</li>
+          <li><strong>TypeScript</strong> & <strong>JavaScript</strong> (ES6+)</li>
+          <li><strong>HTML5 & CSS3 / SCSS</strong></li>
+          <li><strong>Tailwind CSS</strong> & <strong>Bootstrap</strong></li>
+          <li><strong>Firebase</strong> (Hosting, Cloud DB)</li>
+          <li><strong>Git & GitHub</strong> (Version Control)</li>
+          <li><strong>Node.js, Express & MongoDB</strong> (Basi)</li>
+          <li>Responsive Design & Accessibility</li>
+          <li>AJAX & Web APIs RESTful</li>
+        </ul>
+      </div>
+
+      <!-- FORMAZIONE -->
+      <div>
+        <div class="section-title">Istruzione e Formazione:</div>
+        
+        <div class="edu-item">
+          <div class="edu-school">LABFORWEB SRL</div>
+          <div class="edu-year">2025</div>
+          <div class="edu-course">Corso Front-End Developer (500 ore)<br>Accreditato Regione Lazio (Cert. B1DD4E7)</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-school">SAVOIA - BENINCASA</div>
+          <div class="edu-year">2014 - 2019</div>
+          <div class="edu-course">Sistemi Informativi Aziendali (SIA)</div>
+        </div>
+      </div>
+
+      <!-- LINGUE -->
+      <div>
+        <div class="section-title">Lingue:</div>
+        <ul class="lang-list">
+          <li>Italiano (Madrelingua)</li>
+          <li>Inglese (Professionale / B2)</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- COLONNA DESTRA -->
+    <div class="main-content">
+      
+      <!-- PROFILO PROFESSIONALE -->
+      <div>
+        <div class="section-title">Profilo Professionale:</div>
+        <p class="profile-text">
+          Junior Front-End Developer con percorso di formazione intensivo di 500 ore completato con successo. Forte di un solido background nel coordinamento operativo e gestione dei flussi di lavoro in contesti strutturati, unisco precisione metodica, affidabilità e spirito di squadra a competenze pratiche in <strong>Angular</strong>, <strong>TypeScript</strong>, <strong>Tailwind CSS</strong> e <strong>Firebase</strong>. Cerco la mia prima opportunità come Junior Developer per contribuire attivamente a progetti di sviluppo web moderni e scalabili.
+        </p>
+      </div>
+
+      <!-- PROGETTI TECNICI (NUOVA SEZIONE!) -->
+      <div>
+        <div class="section-title">Progetti Personali:</div>
+
+        <!-- CONTO A CAPO -->
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-title">Conto A Capo</span>
+            <span class="project-tech">Angular &bull; TypeScript &bull; Tailwind &bull; Firebase</span>
+          </div>
+          <ul class="project-bullets">
+            <li>Applicazione web reattiva per il calcolo, la gestione e la suddivisione automatica delle spese condivise in gruppi.</li>
+            <li>Architettura a componenti standalone, logica di ripartizione spese e persistenza/hosting su Firebase.</li>
+          </ul>
+          <div class="project-links">
+            <strong>Live Demo:</strong> <a href="https://conto-acapo.web.app" target="_blank">conto-acapo.web.app</a> &nbsp;|&nbsp; 
+            <strong>GitHub:</strong> <a href="https://github.com/Jayson1902/conto-acapo" target="_blank">github.com/Jayson1902/conto-acapo</a>
+          </div>
+        </div>
+
+        <!-- PORTFOLIO -->
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-title">Personal Portfolio</span>
+            <span class="project-tech">Angular &bull; TypeScript &bull; Tailwind CSS</span>
+          </div>
+          <ul class="project-bullets">
+            <li>Sito web personale responsive sviluppato con Angular standalone, navigazione mobile ottimizzata, download CV e certificato.</li>
+          </ul>
+          <div class="project-links">
+            <strong>Live Demo:</strong> <a href="https://clark-mendoza-portfolio.web.app" target="_blank">clark-mendoza-portfolio.web.app</a> &nbsp;|&nbsp; <strong>GitHub:</strong> <a href="https://github.com/Jayson1902/my-portfolio" target="_blank">github.com/Jayson1902/my-portfolio</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPERIENZE PROFESSIONALI -->
+      <div>
+        <div class="section-title">Esperienze Professionali:</div>
+
+        <div class="exp-item">
+          <div class="exp-role">Addetto Reparto Imballaggio e Coordinamento Operativo</div>
+          <div class="exp-company-dates">ERREBIELLE SRL | 2021 - Presente</div>
+          <ul class="exp-bullets">
+            <li>Gestione e supervisione dei flussi di lavoro lungo la linea produttiva.</li>
+            <li>Coordinamento operativo dei colleghi sul campo e supporto diretto al capo reparto nella gestione delle attività quotidiane.</li>
+            <li>Spiccata attenzione ai dettagli, organizzazione delle risorse, problem-solving e affidabilità in contesti industriali strutturati.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-role">Cameriere di Sala</div>
+          <div class="exp-company-dates">Lowengrube | 2019 - 2021</div>
+          <ul class="exp-bullets">
+            <li>Gestione del servizio clienti, presa comande e coordinamento rapido della sala.</li>
+            <li>Competenze: Ottime doti comunicative, orientamento al cliente e gestione dello stress in ambienti dinamici ad alto ritmo.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+
+

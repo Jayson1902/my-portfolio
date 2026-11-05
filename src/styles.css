@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+html {
+  scroll-padding-top: 4rem;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Apertura menu mobile */
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-menu {
+  animation: menu-in 200ms ease-out;
+}
+
+/* Entrata dell'hero al caricamento */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-up {
+  animation: fade-up 700ms ease-out both;
+}
+
+/* Comparsa delle sezioni durante lo scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Rispetta chi ha disattivato le animazioni nel sistema */
+@media (prefers-reduced-motion: reduce) {
+  .animate-menu,
+  .animate-fade-up {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

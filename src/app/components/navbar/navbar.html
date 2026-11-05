@@ -1,0 +1,168 @@
+<nav
+  class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-white"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Brand / Nome -->
+    <a
+      href="#"
+      class="flex flex-col xl:flex-row xl:items-center xl:space-x-2 shrink-0 leading-tight"
+    >
+      <span
+        class="text-base sm:text-xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent"
+      >
+        Clark Jayson Mendoza
+      </span>
+      <span
+        class="text-[10px] sm:text-xs font-medium text-blue-400/80 xl:text-blue-400 xl:px-2 xl:py-0.5 xl:rounded-full xl:bg-blue-500/10 xl:border xl:border-blue-500/20"
+      >
+        Junior Front-End Developer
+      </span>
+    </a>
+
+    <!-- Link Desktop -->
+    <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+      <a href="#stack" class="hover:text-blue-400 transition-colors">Stack</a>
+      <a href="#projects" class="hover:text-blue-400 transition-colors">Progetti</a>
+      <a href="#about" class="hover:text-blue-400 transition-colors">Chi sono</a>
+      <a
+        href="/cv-clark-jayson-mendoza.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-slate-300 hover:text-blue-400 transition-colors"
+      >
+        Scarica CV
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 text-blue-400"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Desktop CTA -->
+    <div class="hidden lg:flex items-center">
+      <a
+        href="mailto:clarkjaysonmendoza@gmail.com"
+        class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-lg shadow-blue-600/20"
+      >
+        Contattami
+      </a>
+    </div>
+
+    <!-- Mobile / Tablet Hamburger Button -->
+    <div class="flex items-center lg:hidden">
+      <button
+        (click)="toggleMobileMenu()"
+        type="button"
+        class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        aria-label="Menu"
+        aria-controls="mobile-menu"
+        [attr.aria-expanded]="isMobileMenuOpen"
+      >
+        @if (!isMobileMenuOpen) {
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        } @else {
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  @if (isMobileMenuOpen) {
+    <div
+      id="mobile-menu"
+      class="animate-menu lg:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto bg-slate-900/95 backdrop-blur-xl border-b border-slate-800 px-5 pt-3 pb-6 space-y-3.5 shadow-2xl"
+    >
+      <a
+        (click)="closeMobileMenu()"
+        href="#stack"
+        class="block text-slate-200 hover:text-blue-400 font-medium py-1 text-base transition-colors"
+        >Stack Tecnologico</a
+      >
+      <a
+        (click)="closeMobileMenu()"
+        href="#projects"
+        class="block text-slate-200 hover:text-blue-400 font-medium py-1 text-base transition-colors"
+        >I Miei Progetti</a
+      >
+      <a
+        (click)="closeMobileMenu()"
+        href="#about"
+        class="block text-slate-200 hover:text-blue-400 font-medium py-1 text-base transition-colors"
+        >Chi sono</a
+      >
+      <a
+        (click)="closeMobileMenu()"
+        href="/cv-clark-jayson-mendoza.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-between text-blue-400 font-semibold py-1 text-base"
+      >
+        <span>Scarica CV (PDF)</span>
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          />
+        </svg>
+      </a>
+      <div class="pt-2">
+        <a
+          (click)="closeMobileMenu()"
+          href="mailto:clarkjaysonmendoza@gmail.com"
+          class="w-full flex items-center justify-center px-4 py-3 text-sm font-semibold rounded-xl bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-lg shadow-blue-600/30"
+        >
+          Contattami via Email
+        </a>
+      </div>
+    </div>
+  }
+</nav>
